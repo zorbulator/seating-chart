@@ -1,0 +1,10 @@
+name,like,like,dislike
+waluigi,wario,bowser,luigi
+wario,waluigi,toad,mario
+mario,luigi,toad,wario
+luigi,mario,toad,wario
+toad,luigi,mario,waluigi
+bowser,mario,luigi,waluigi
+peach,toad,mario,waluigi
+minecraftsteve,mario,waluigi,luigi
+
