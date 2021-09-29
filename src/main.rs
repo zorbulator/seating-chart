@@ -146,12 +146,15 @@ fn main() {
     }
 
     let mut b = Simulator::builder(&mut population);
-    b.with_selector(Box::new(StochasticSelector::new(10)))
-        .with_max_iters(50000);
+    //b.with_selector(Box::new(TournamentSelector::new_checked(8, 10).expect("incorrect selector parameters")))
+    b.with_selector(Box::new(UnstableMaximizeSelector::new(2)))
+        .with_max_iters(5000);
     let mut s = b.build();
     s.run();
     let result: &SeatingChart = s.get().unwrap();
 
     println!("final list: {:?}", result.people.iter().map(|p| &p.name).collect::<Vec<&String>>());
     println!("score: {}", result.fitness().value);
+
+    println!("{:?}", population.iter().map(|c| c.fitness().value).collect::<Vec<isize>>());
 }
